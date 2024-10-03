@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
-class TrendingText extends StatelessWidget {
-  const TrendingText({super.key});
+class CategoryText extends StatelessWidget {
+  final String title;
+  const CategoryText({required this.title,super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(
+    return Padding(
+      padding: const EdgeInsets.only(
         top: 12,
         left: 16
       ),
       child: Text(
-        'Trendings 🔥',
-        style: TextStyle(
+        title,
+        style: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 24
         ),

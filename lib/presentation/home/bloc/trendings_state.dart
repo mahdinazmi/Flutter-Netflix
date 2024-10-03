@@ -1,15 +1,15 @@
 import 'package:netflix/domain/movie/entities/movie.dart';
 
-abstract class TrendingState {}
+abstract class TrendingsState {}
 
-class TrendingMoviesLoading extends TrendingState {}
+class TrendingMoviesLoading extends TrendingsState {}
 
-class TrendingMoviesLoaded extends TrendingState {
+class TrendingMoviesLoaded extends TrendingsState {
   final List<MovieEntity> movies;
   TrendingMoviesLoaded({required this.movies});
 }
 
-class FailureLoadTrendingMovies extends TrendingState {
+class FailureLoadTrendingMovies extends TrendingsState {
   final String errorMessage;
   FailureLoadTrendingMovies({required this.errorMessage});
 }
