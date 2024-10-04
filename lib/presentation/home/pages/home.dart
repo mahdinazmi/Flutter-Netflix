@@ -4,6 +4,7 @@ import 'package:netflix/common/widgets/appbar/app_bar.dart';
 import 'package:netflix/core/configs/assets/app_vectors.dart';
 import 'package:netflix/presentation/home/widgets/category_text.dart';
 import 'package:netflix/presentation/home/widgets/now_playing_movies.dart';
+import 'package:netflix/presentation/home/widgets/popular_tv.dart';
 import 'package:netflix/presentation/home/widgets/trending_movies.dart';
 
 class HomePage extends StatelessWidget {
@@ -28,6 +29,10 @@ class HomePage extends StatelessWidget {
             CategoryText(title: 'Now Playing'),
             SizedBox(height: 16,),
             NowPlayingMovies(),
+            SizedBox(height: 16,),
+            CategoryText(title: 'Popular TV'),
+            SizedBox(height: 16,),
+            PopularTv(),
             SizedBox(height: 16,),
           ],
         ),
