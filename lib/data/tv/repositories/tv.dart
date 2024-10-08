@@ -23,6 +23,34 @@ class TVRepositoryImpl extends TVRepository {
     }
     );
   }
+  
+  @override
+  Future<Either> getRecommendationTVs(int tvId) async {
+    var returnedData = await sl < TVService > ().getRecommendationTVs(tvId);
+    return returnedData.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        var movies = List.from(data['content']).map((item) => TvMapper.toEntity(TVModel.fromJson(item))).toList();
+        return Right(movies);
+      }
+    );
+  }
+  
+  @override
+  Future<Either> getSimilarTVs(int tvId) async {
+    var returnedData = await sl < TVService > ().getSimilarTVs(tvId);
+    return returnedData.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        var movies = List.from(data['content']).map((item) => TvMapper.toEntity(TVModel.fromJson(item))).toList();
+        return Right(movies);
+      }
+    );
+  }
 
   
 }
