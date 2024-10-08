@@ -10,6 +10,7 @@ abstract class TVService {
   Future<Either> getPopularTv();
   Future<Either> getRecommendationTVs(int tvId);
   Future<Either> getSimilarTVs(int tvId);
+   Future<Either> getKeywords(int tvId);
 }
 
 
@@ -48,6 +49,20 @@ class TVApiServiceImpl extends TVService {
 
       var response = await sl<DioClient>().get(
         '${ApiUrl.tv}$tvId/similar',
+      );
+      return Right(response.data);
+
+    } on DioException catch(e) {
+      return Left(e.response!.data['message']);
+    }
+  }
+  
+  @override
+  Future<Either> getKeywords(int tvId) async {
+     try {
+
+      var response = await sl<DioClient>().get(
+        '${ApiUrl.tv}$tvId/keywords',
       );
       return Right(response.data);
 

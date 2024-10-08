@@ -4,6 +4,7 @@ import 'package:netflix/domain/tv/entities/tv.dart';
 import 'package:netflix/presentation/watch/widgets/video_player.dart';
 import '../widgets/recommendation_tvs.dart';
 import '../widgets/similar_tvs.dart';
+import '../widgets/tv_keywords.dart';
 import '../widgets/video_overview.dart';
 import '../widgets/video_title.dart';
 import '../widgets/video_vote_average.dart';
@@ -26,6 +27,8 @@ class TVWatchPage extends StatelessWidget {
             VideoPlayer(id: tvEntity.id!),
             const SizedBox(height: 16,),
             VideoTitle(title: tvEntity.name!,),
+            const SizedBox(height: 16,),
+            TVKeywords(tvId: tvEntity.id!,),
             const SizedBox(height: 16,),
             VideoVoteAverage(voteAverage: tvEntity.voteAverage!,),
             const SizedBox(height: 16,),

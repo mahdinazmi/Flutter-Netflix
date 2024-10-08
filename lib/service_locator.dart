@@ -18,6 +18,7 @@ import 'package:netflix/domain/movie/usecases/get_recommendation_movies.dart';
 import 'package:netflix/domain/movie/usecases/get_similar_movies.dart';
 import 'package:netflix/domain/movie/usecases/get_trending_movies.dart';
 import 'package:netflix/domain/tv/repositories/tv.dart';
+import 'package:netflix/domain/tv/usecases/get_keywords.dart';
 import 'package:netflix/domain/tv/usecases/get_popular_tv.dart';
 import 'package:netflix/domain/tv/usecases/get_recommendation_tvs.dart';
 import 'package:netflix/domain/tv/usecases/get_similar_tvs.dart';
@@ -51,4 +52,5 @@ void setupServiceLocator() {
   sl.registerSingleton<GetSimilarMoviesUseCase>(GetSimilarMoviesUseCase());
   sl.registerSingleton<GetSimilarTvsUseCase>(GetSimilarTvsUseCase());
   sl.registerSingleton<GetRecommendationTvsUseCase>(GetRecommendationTvsUseCase());
+  sl.registerSingleton<GetTVKeywordsUseCase>(GetTVKeywordsUseCase());
 }

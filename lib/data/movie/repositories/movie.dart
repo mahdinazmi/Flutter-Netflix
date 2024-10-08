@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:netflix/common/helper/mapper/movie_mapper.dart';
-import 'package:netflix/common/helper/mapper/trailer_mapper.dart';
+import 'package:netflix/common/helper/mapper/movie.dart';
+import 'package:netflix/common/helper/mapper/trailer.dart';
 import 'package:netflix/core/models/trailer.dart';
 import 'package:netflix/data/movie/sources/movie.dart';
 import 'package:netflix/domain/movie/repositories/movie.dart';
