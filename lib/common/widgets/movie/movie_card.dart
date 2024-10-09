@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:netflix/common/helper/navigation/app_navigation.dart';
-import 'package:netflix/core/configs/assets/app_images.dart';
 import 'package:netflix/domain/movie/entities/movie.dart';
 import 'package:netflix/presentation/watch/pages/movie_watch.dart';
 
@@ -38,9 +37,9 @@ class MovieCard extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.fill,
                     image: NetworkImage(
-                    AppImages.movieImageBasePath +  movieEntity.posterPath!
-                    )
-                  ),
+                    movieEntity.providePosterPath()
+                  )
+                 ),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
                     topRight: Radius.circular(8)

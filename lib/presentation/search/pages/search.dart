@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix/common/widgets/appbar/app_bar.dart';
+import 'package:netflix/presentation/search/bloc/search_cubit.dart';
 import 'package:netflix/presentation/search/bloc/selectable_option_cubit.dart';
-
+import 'package:netflix/presentation/search/widgets/search_options.dart';
+import '../widgets/search_content.dart';
 import '../widgets/search_field.dart';
-import '../widgets/selectable_option.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
@@ -17,34 +18,18 @@ class SearchPage extends StatelessWidget {
       ),
       body: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => SelectableOptionCubit())
+          BlocProvider(create: (context) => SelectableOptionCubit()),
+          BlocProvider(create: (context) => SearchCubit())
         ],
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              const SearchField(),
-              const SizedBox(height: 16,),
-              BlocBuilder<SelectableOptionCubit,SearchType>(
-                builder: (context, state) {
-                  return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SelectableOption(
-                      isSelected: context.read<SelectableOptionCubit>().state == SearchType.movie,
-                      title: 'Movie',
-                      onTap: () => context.read<SelectableOptionCubit>().selectMovie(),
-                    ),
-                    const SizedBox(width: 16,),
-                     SelectableOption(
-                      isSelected: context.read<SelectableOptionCubit>().state == SearchType.tv,
-                      title: 'TV',
-                      onTap: () => context.read<SelectableOptionCubit>().selectTV(),
-                    )
-                  ],
-                );
-                },
-              )
+              SearchField(),
+              SizedBox(height: 16,),
+              SearchOptions(),
+              SizedBox(height: 16,),
+              Expanded(child: SearchContent())
             ],
           ),
         ),
