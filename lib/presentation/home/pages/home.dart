@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:netflix/common/helper/navigation/app_navigation.dart';
 import 'package:netflix/common/widgets/appbar/app_bar.dart';
 import 'package:netflix/core/configs/assets/app_vectors.dart';
 import 'package:netflix/presentation/home/widgets/category_text.dart';
 import 'package:netflix/presentation/home/widgets/now_playing_movies.dart';
 import 'package:netflix/presentation/home/widgets/popular_tv.dart';
 import 'package:netflix/presentation/home/widgets/trending_movies.dart';
+
+import '../../search/pages/search.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,6 +18,12 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: BasicAppbar(
         hideBack: true,
+        action: IconButton(
+          icon: const Icon(Icons.search),
+          onPressed: (){
+            AppNavigator.push(context, const SearchPage());
+          },
+        ),
         title: SvgPicture.asset(
            AppVectors.logo
         ),
