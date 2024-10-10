@@ -396,10 +396,10 @@ packages:
     dependency: "direct main"
     description:
       name: reactive_button
-      sha256: e992b8679577a25d2d4cc959aa043ac3ea6d77e0aa54b52add9159c93b147345
+      sha256: "5b407f065d83db079a182dc0968d2a085f9e071cdbc94d31b415277561f79b86"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.8"
+    version: "0.0.9"
   shared_preferences:
     dependency: "direct main"
     description:

@@ -40,7 +40,7 @@ class PopularTv extends StatelessWidget {
           }
 
           if (state is FailureLoadData) {
-            return Text(state.errorMessage);
+            return Center(child: Text(state.errorMessage));
           }
 
           return Container();
