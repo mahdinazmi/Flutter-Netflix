@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:netflix/common/helper/navigation/app_navigation.dart';
-import 'package:netflix/core/configs/assets/app_images.dart';
 import 'package:netflix/domain/tv/entities/tv.dart';
 
 import '../../../core/configs/theme/app_colors.dart';
@@ -38,7 +37,7 @@ class TVCard extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.fill,
                     image: NetworkImage(
-                    AppImages.movieImageBasePath +  tvEntity.posterPath!
+                      tvEntity.providePosterPath(),
                     )
                   ),
                   borderRadius: const BorderRadius.only(

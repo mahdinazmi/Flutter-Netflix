@@ -1,3 +1,5 @@
+import '../../../core/configs/assets/app_images.dart';
+
 class TVEntity {
   TVEntity({
     required this.adult,
@@ -30,4 +32,9 @@ class TVEntity {
   final String ? name;
   final double ? voteAverage;
   final int ? voteCount;
+
+  String providePosterPath() {
+    return  posterPath != null ? AppImages.movieImageBasePath + posterPath! :  
+    AppImages.defaultImage;
+  }
 }
