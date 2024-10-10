@@ -1,6 +1,6 @@
 class ApiUrl {
 
-  static const baseURL = 'http://192.168.234.95:5000/'; 
+  static const baseURL = 'https://netflix-backend-production-8413.up.railway.app/'; 
   static const apiV = 'api/v1/';
   
   static const signup = '${apiV}auth/signup';
